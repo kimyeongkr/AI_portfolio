@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" data-immersive-translate-page-theme="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Landing Page (Kim Yeong) - v7 (Editorial Orange Palette)</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Pretendard CDN -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&amp;family=Playfair+Display:ital@1&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['Space Grotesk', 'Pretendard', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            brand: {
+              cream: '#F7F6F2',
+              sand: '#EFECE6',
+              dark: '#141414',
+              charcoal: '#1A1A1A',
+              muted: '#71717A',
+              accent: '#E05A47'
+            }
+          }
+        }
+      }
+    }
+</script>
+<!-- Custom Styles -->
+<style data-purpose="custom-typography">
+    .font-serif-italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+</style>
+<style data-purpose="visual-effects">
+    /* Forest & sunset hero background gradient overlay matching screenshot */
+    .hero-sky-bg {
+      background: radial-gradient(circle at 50% 40%, rgba(243, 137, 72, 0.35) 0%, rgba(135, 78, 126, 0.45) 45%, rgba(20, 20, 25, 0.75) 100%),
+                  linear-gradient(180deg, rgba(74, 94, 133, 0.5) 0%, rgba(214, 107, 73, 0.6) 50%, rgba(20, 15, 20, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+    }
+    
+    .sunset-card-bg {
+      background: radial-gradient(circle at 70% 30%, rgba(255, 140, 60, 0.5) 0%, rgba(180, 70, 90, 0.6) 50%, rgba(40, 30, 60, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+
+    .footer-dark-bg {
+      background: radial-gradient(circle at 20% 80%, rgba(50, 40, 50, 0.9) 0%, #151515 100%);
+    }
+
+    /* Modal Animation */
+    .modal-enter {
+      opacity: 0;
+      transform: scale(0.96) translateY(8px);
+    }
+    .modal-enter-active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      transition: opacity 260ms cubic-bezier(0.16, 1, 0.3, 1), transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-exit {
+      opacity: 0;
+      transform: scale(0.97) translateY(6px);
+      transition: opacity 180ms ease-in, transform 180ms ease-in;
+    }
+</style>
+<style data-id="immersive-translate-input-injected-css"></style></head>
+<body class="bg-brand-cream text-[#222222] antialiased selection:bg-black selection:text-white">
+<!-- BEGIN: Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#F7F6F2]/90 backdrop-blur-md border-b border-black/5 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+<!-- Logo Wordmark -->
+<a class="flex items-center gap-2 group tracking-tighter" data-purpose="brand-logo" href="#home"><span class="font-display font-extrabold text-xl tracking-tighter uppercase">KIM YEONG</span></a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden md:flex items-center space-x-9 text-xs font-bold tracking-widest text-[#444444]" data-purpose="desktop-nav">
+<a class="hover:text-black transition-colors uppercase" href="#home">HOME</a>
+<a class="hover:text-black transition-colors uppercase" href="#works">WORKS</a>
+<a class="hover:text-black transition-colors uppercase" href="#about">ABOUT</a>
+<a class="hover:text-black transition-colors uppercase" href="#contact">CONTACT</a>
+</nav>
+</div>
+</header>
+<!-- END: Navigation -->
+<main>
+<!-- BEGIN: Hero Section -->
+<section class="relative h-screen w-full flex flex-col items-center justify-center text-black px-6 overflow-hidden" data-purpose="hero-section" id="home" style="background: radial-gradient(circle at 50% -20%, #FF750F 0%, #FFAE73 35%, #FFE2CA 65%, #F7F6F2 90%);">
+<!-- Hero Central Content -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+<!-- Geometric / Monogram symbol in dark charcoal/orange -->
+<div class="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center text-[#1A1A1A] mb-5 text-xl font-bold font-display shadow-sm">
+  ✳
+</div>
+<!-- Name Title -->
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-[0.2em] font-display uppercase mb-3 text-[#1A1A1A]">KIM YEONG</h1>
+<!-- Subtitle -->
+<p class="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-[#4A4A4A]">SERVICE PLANNING PORTFOLIO 2026</p>
+</div>
+<!-- Scroll to explore badge in readable dark charcoal -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#444444] text-[10px] tracking-[0.25em] uppercase font-medium" data-purpose="scroll-indicator">
+<span class="w-[1px] h-8 bg-black/30 mb-1 animate-pulse"></span>
+      SCROLL TO EXPLORE
+    </div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Vision / Introduction Section -->
+<section class="py-24 md:py-32 px-6 md:px-12 bg-brand-cream" data-purpose="vision-container" id="vision">
+<div class="max-w-7xl mx-auto">
+<!-- Two Column Intro Row -->
+<div class="w-full mb-24"><div class="flex items-center gap-3 mb-6"><span class="text-[11px] font-bold tracking-[0.25em] text-[#555555] uppercase">SERVICE PLANNING &amp; STRATEGY</span><div class="w-8 h-[1px] bg-black/30"></div></div><h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-black mb-10 font-display">FROM INSIGHT TO EXPERIENCES<br/><span class="font-serif-italic font-normal tracking-normal text-black">THAT MATTER.</span></h2><div class="space-y-4 text-base md:text-lg text-[#404040] leading-relaxed max-w-3xl font-normal"><p class="font-semibold text-black text-lg md:text-xl leading-snug">필요를 넘어, 마음이 가는 경험을.</p><div class="space-y-1.5 text-sm md:text-base text-[#666666] leading-relaxed pt-2"><p>서로 다른 생각과 취향, 다양한 선택의 이유를 살핍니다.</p><p>그 안에서 발견한 가능성을 가치 있는 서비스로 연결하겠습니다.</p></div></div></div>
+<!-- Vision Attributes Row -->
+<div class="pt-8 border-t border-black/10">
+<p class="text-[11px] font-bold tracking-[0.25em] text-[#777777] uppercase mb-8">MY VISION</p>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10">
+<!-- Vision 1: CREATE -->
+<div class="py-6 md:py-2 md:px-8 first:pl-0 flex flex-col items-center md:items-start text-center md:text-left"><div class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-lg mb-4 text-black">✳</div><h3 class="font-display font-bold text-xs tracking-[0.2em] uppercase text-black mb-1.5">EXPLORE</h3><p class="text-xs text-[#555555]">다양한 관점에서<br/>사람들의 생각과 선택을 탐색합니다.</p></div>
+<!-- Vision 2: CONNECT -->
+<div class="py-6 md:py-2 md:px-8 flex flex-col items-center md:items-start text-center md:text-left"><div class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-lg mb-4 text-black">↗</div><h3 class="font-display font-bold text-xs tracking-[0.2em] uppercase text-black mb-1.5">CONNECT</h3><p class="text-xs text-[#555555]">발견한 문제와 가능성을<br/>서비스 아이디어로 연결합니다.</p></div>
+<!-- Vision 3: GROW -->
+<div class="py-6 md:py-2 md:px-8 last:pr-0 flex flex-col items-center md:items-start text-center md:text-left"><div class="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-lg mb-4 text-black">✦</div><h3 class="font-display font-bold text-xs tracking-[0.2em] uppercase text-black mb-1.5">BUILD</h3><p class="text-xs text-[#555555]">아이디어를 실제<br/>사용 가능한 기능으로 구현합니다.</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Vision Section -->
+<!-- BEGIN: Works Section -->
+<section class="py-24 px-6 md:px-12 bg-white" data-purpose="works-container" id="works"><div class="max-w-7xl mx-auto">
+<!-- Works Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-black/10 pb-8 mb-14">
+<div>
+<span class="text-[11px] font-bold tracking-[0.25em] text-[#777777] uppercase block mb-1">SELECTED PROJECTS</span>
+<h2 class="text-5xl md:text-7xl font-black font-display tracking-tight text-black flex items-baseline">
+        WORKS<span class="inline-block w-3 h-3 md:w-3.5 md:h-3.5 bg-brand-accent rounded-full ml-1"></span>
+</h2>
+</div>
+</div>
+<!-- 2-Column Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+<!-- Project 1: Brand Beacon -->
+<article class="group">
+<div class="aspect-video rounded-md overflow-hidden bg-neutral-100 mb-4 relative group cursor-pointer shadow-sm hover:shadow-md transition-all border border-black/5">
+<img alt="Brand Beacon" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlsfPS4UQft9l7ZPRrhHxvjkKeb3hkQNMk-ZT3voKQ5eUQEeddxi5LarO5MrHR3pwYXyGC2iF1GyS-eqX9XJHjoP8HBroQmbT6vvxvW0FqhfiVKbyQ7zHNFvFv64J1gKZgFwGFUmuG3cGt289CETSzhYGZySAlnXK6weYsKzvbaaLa4uaz4fYK5gVMHPfnW1Ov8GWG3ENgZwQyDLECnsp9_Nv39JDn9hLaMCJTZ4Gr0Xx1azmsQFTc7Q"/>
+<div class="absolute bottom-3 right-3 w-7 h-7 rounded-full bg-black/60 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+          ↗
+        </div>
+</div>
+<div>
+<div class="flex items-baseline justify-between">
+<h3 class="text-base md:text-lg font-bold text-black group-hover:text-brand-accent transition-colors">
+            Brand Beacon
+          </h3>
+<span class="font-mono text-xs text-[#888888]">2026.05–06</span>
+</div>
+<p class="text-sm text-[#444444] leading-relaxed mt-2">
+          브랜드 간 시각적 차이를 비교하고, 데이터 기반으로 브랜드 방향을 탐색하도록 돕는 서비스
+        </p>
+<div class="text-xs text-[#777777] font-medium mt-3 pt-3 border-t border-black/5 flex items-center justify-between">
+<span>서비스 기획 · 데이터 분석 · AI 기능 개발</span>
+</div>
+</div>
+</article>
+<!-- Project 2: 말랑말랑 -->
+<article class="group">
+<div class="aspect-video rounded-md overflow-hidden bg-neutral-100 mb-4 relative group cursor-pointer shadow-sm hover:shadow-md transition-all border border-black/5"><img alt="말랑말랑 썸네일" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCBVNWmJtEpQRoAw916y-hJrVWSlxQNSbBilwzJO3WRIynnqO-ipcRP6s_IIeaoIkFB_UHMDH319GNrNnvLiwqowdGSelM9ONASEiaDAWJp2KyUsJQEsqNrIPGdXPcCc1E7Gd2Bun5eP0XRm0cElaaDrX78t89tSqGNUdZVHuP-0gYBm-_AL7NjSjPzK5O14bB8czvHx00KNFdrPfCrwDIqZd6ZfG2Lc04NkzXzXrhbF6H52hJEl15GA"/><div class="absolute bottom-3 right-3 w-7 h-7 rounded-full bg-black/60 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">↗</div></div>
+<div>
+<div class="flex items-baseline justify-between">
+<h3 class="text-base md:text-lg font-bold text-black group-hover:text-brand-accent transition-colors">
+            말랑말랑
+          </h3>
+<span class="font-mono text-xs text-[#888888]">2026.03–04</span>
+</div>
+<p class="text-sm text-[#444444] leading-relaxed mt-2">
+          상대와 상황에 맞게 메시지의 어조를 조정해, 업무 소통을 돕는 AI 채팅 서비스
+        </p>
+<div class="text-xs text-[#777777] font-medium mt-3 pt-3 border-t border-black/5 flex items-center justify-between">
+<span>서비스 기획 · 백엔드 개발</span>
+</div>
+</div>
+</article>
+</div>
+</div></section>
+<!-- END: Works Section -->
+<!-- BEGIN: About Section -->
+<section class="py-24 md:py-32 px-6 md:px-12 pb-32 md:pb-40 bg-brand-cream border-t border-black/10" data-purpose="about-container" id="about">
+<div class="max-w-7xl mx-auto"><div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center mb-16"><div class="md:col-span-8 flex flex-col justify-center"><span class="text-[11px] font-bold tracking-[0.25em] text-[#777777] uppercase block mb-3">GET TO KNOW ME</span><h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black font-display leading-[1.15] mb-5">디자인과 서비스 운영을 거쳐,<br/>기획과 구현으로.</h3><p class="text-sm md:text-base text-[#555555] leading-relaxed max-w-xl font-normal">디자인과 전시·콘텐츠 제작, 쇼핑 서비스 운영을 경험했습니다.<br/>이후 AI·데이터 기반 서비스 프로젝트를 수행하며 문제를 정의하고 아이디어를 실제 기능으로 연결하는 경험을 쌓았습니다.</p></div><div class="md:col-span-4 flex justify-center md:justify-end"><div class="w-48 sm:w-56 aspect-[3/4] rounded-md bg-[#E6E4DD] border border-black/10 flex flex-col items-center justify-center text-[#888888] shadow-sm"><div class="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center text-black/40 mb-3"><svg class="w-6 h-6 stroke-current stroke-[1.6] fill-none" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div><span class="text-xs font-semibold tracking-wider uppercase">PROFILE IMAGE</span></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-black/10 pt-10 mb-12"><div><h4 class="text-xs font-bold tracking-widest uppercase text-black mb-6">RELEVANT EXPERIENCE</h4><div><div><div class="font-bold text-black text-sm mb-1">인컴즈 · 쇼핑 서비스 운영</div><p class="text-xs text-[#666666] leading-relaxed">네이버 쇼핑 서비스 및 콘텐츠 운영 지원</p></div><div><div class="font-bold text-black text-sm mb-1 mt-5">와사비아 · 전시·콘텐츠 디자인</div><p class="text-xs text-[#666666] leading-relaxed">전시·행사 디자인 및 홍보물 제작</p></div></div></div><div><h4 class="text-xs font-bold tracking-widest uppercase text-black mb-6">EDUCATION &amp; TRAINING</h4><div><div><div class="font-bold text-black text-sm mb-1">계원예술대학교</div><p class="text-xs text-[#666666] leading-relaxed">감성경험제품디자인</p></div><div><div class="font-bold text-black text-sm mb-1 mt-5">스마트인재개발원</div><p class="text-xs text-[#666666] leading-relaxed">언어지능 기반 분석서비스 개발자과정</p></div></div></div></div><div class="border-t border-black/10 pt-10"><h4 class="text-xs font-bold tracking-widest uppercase text-black mb-4">SKILLS &amp; TOOLS</h4><p class="text-xs font-semibold text-[#444444] mb-3">서비스 기획 · 유사 서비스 조사 · 사용자 흐름 및 기능 설계</p><div class="flex flex-wrap gap-2 text-xs font-medium text-[#444444]"><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">Figma</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">Notion</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">Python</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">SQL</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">Spring Boot</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">FastAPI</span><span class="px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70">MySQL</span></div></div></div>
+</section>
+<!-- END: About Section -->
+<!-- BEGIN: Contact / Footer Callout -->
+<section class="py-24 px-6 md:px-12 text-[#1A1A1A]" data-purpose="contact-section" id="contact" style="background: linear-gradient(135deg, #FF882E 0%, #FFA25B 45%, #F6BE93 100%);">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+<div>
+<span class="text-[11px] font-bold tracking-[0.25em] text-[#665550] uppercase block mb-3">LET'S CONNECT</span>
+<h2 class="text-4xl sm:text-6xl md:text-7xl font-extrabold font-display tracking-tight text-[#1A1A1A] leading-tight">
+          LET'S WORK<br/>
+<span class="font-serif-italic font-normal">TOGETHER.</span>
+</h2>
+</div>
+<div class="flex flex-col items-start md:items-end">
+<p class="text-xs text-[#333333] mb-3 font-medium">새로운 작업과 협업을 기다립니다.</p>
+<a class="text-xl md:text-2xl font-medium tracking-tight text-[#1A1A1A] hover:text-brand-accent transition-colors border-b border-black/30 pb-1 flex items-center gap-1 group" href="mailto:kimyeong.kr@gmail.com">
+          kimyeong.kr@gmail.com 
+          <span class="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+</a>
+</div>
+</div>
+</section>
+<!-- END: Contact / Footer Callout -->
+</main>
+<!-- BEGIN: Site Footer -->
+<footer class="text-[#2A2421] text-[11px] py-6 px-6 md:px-12 border-t border-black/10" data-purpose="site-footer" style="background-color: #F6BE93;">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-medium">
+<p class="tracking-wider">© 2026 KIM YEONG</p>
+<p class="tracking-widest uppercase text-[#443C37]">SERVICE PLANNING PORTFOLIO</p>
+<a class="tracking-wider uppercase hover:text-black transition-colors flex items-center gap-1" href="#home">
+      BACK TO TOP ↑
+    </a>
+</div>
+</footer>
+<!-- END: Site Footer -->
+<!-- BEGIN: Interactive Project Detail Modal -->
+<div aria-labelledby="modalProjectTitle" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/65 backdrop-blur-sm transition-opacity duration-300 hidden" id="projectModal" role="dialog">
+<div class="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-[#F5F3EE] rounded-sm shadow-2xl border border-black/10 p-6 sm:p-8 md:p-10 modal-enter text-black" id="modalCard" onclick="event.stopPropagation()">
+<!-- Modal Header Top Row -->
+<div class="flex items-center justify-between mb-2">
+<div class="text-[12px] sm:text-[13px] font-medium tracking-wide text-[#666666]" id="modalMetaCategory">
+        시리즈 책 / 2026.05
+      </div>
+<!-- Close Button -->
+<button aria-label="Close dialog" class="w-8 h-8 -mr-1.5 -mt-1.5 flex items-center justify-center text-black/70 hover:text-black hover:rotate-90 transition-all rounded" onclick="closeProjectModal()">
+<svg class="w-5 h-5 stroke-current stroke-[2.2] fill-none" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<!-- Modal Large Bold Title -->
+<h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-display mb-6 text-black" id="modalProjectTitle">
+      2027 UNION 엑스칼리버 시리즈
+    </h3>
+<!-- 2x2 Visual Mockup Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7" id="modalVisualGrid">
+<!-- Main Visual (Top Left) -->
+<div class="relative aspect-[4/3] bg-[#E9E7E1] rounded overflow-hidden flex items-center justify-center border border-black/5 group">
+<img alt="Project Visual Preview" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500" id="modalMainImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6gUdMsz9tPoertLWUOTrOTZ7fAY9C8xyEEhVS6ZVfnOmfI1qHTLserq36V5lJ1I-N6Y51krurYJ1FsY8JogdSanSm2KFFb5PQr3eXUBc8iGWhliZILLAMJ5o5eFHfEdKrVSKCG7NAj5GN2aZs3gFqzjdmwL2xj7igqPO5058-BBbGMW9sWE04PrH4kRfm4CGlHdiEp74SdJW3qceuxbaqrwHaHN6ZtnA8YcCt4WtkT-Yd1UIr95VR"/>
+</div>
+<!-- Preview Slot 2 (Top Right) -->
+<div class="relative aspect-[4/3] bg-[#E6E4DD] rounded overflow-hidden flex flex-col items-center justify-center text-center p-4 border border-black/5">
+<div class="w-10 h-10 mb-2 rounded-full bg-black/5 flex items-center justify-center text-black/40">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+</div>
+<p class="text-xs sm:text-[13px] text-[#77746E] font-medium" id="modalPlaceholder1">
+          이미지를 불러올 수 없습니다. images/book2.jpg
+        </p>
+</div>
+<!-- Preview Slot 3 (Bottom Left) -->
+<div class="relative aspect-[4/3] bg-[#E6E4DD] rounded overflow-hidden flex flex-col items-center justify-center text-center p-4 border border-black/5">
+<div class="w-10 h-10 mb-2 rounded-full bg-black/5 flex items-center justify-center text-black/40">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+</div>
+<p class="text-xs sm:text-[13px] text-[#77746E] font-medium" id="modalPlaceholder2">
+          이미지를 불러올 수 없습니다. images/book3.jpg
+        </p>
+</div>
+<!-- Preview Slot 4 (Bottom Right) -->
+<div class="relative aspect-[4/3] bg-[#E6E4DD] rounded overflow-hidden flex flex-col items-center justify-center text-center p-4 border border-black/5">
+<div class="w-10 h-10 mb-2 rounded-full bg-black/5 flex items-center justify-center text-black/40">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+<p class="text-xs sm:text-[13px] text-[#77746E] font-medium" id="modalPlaceholder3">
+          이미지를 불러올 수 없습니다. images/book4.jpg
+        </p>
+</div>
+</div>
+<!-- Modal Bottom Information Section -->
+<div class="pt-2">
+<div class="flex items-center justify-between pb-3 border-b border-black/15 text-[11px] sm:text-xs font-bold tracking-widest uppercase">
+<span class="text-black font-display tracking-[0.14em]">PROJECT INFORMATION</span>
+<span class="text-black font-display tracking-[0.14em]">TOOLS</span>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 pt-3.5 pb-2 text-xs sm:text-[13px]">
+<div class="flex items-baseline gap-4 sm:gap-8">
+<span class="text-[#77746E] font-medium whitespace-nowrap">담당 업무</span>
+<span class="text-black font-semibold" id="modalRoleDetail">표지 디자인 · 내지 편집 · 레이아웃</span>
+</div>
+<div class="text-[#55524B] font-mono sm:text-right" id="modalToolsDetail">
+          hwp(한글) · Illustrator · Photoshop
+        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Interactive Project Detail Modal -->
+<!-- BEGIN: Interactive Scripts -->
+<script data-purpose="interaction-enhancements">
+    const projectData = {
+      excalibur: {
+        category: "시리즈 책 / 2026.05",
+        title: "2027 UNION 엑스칼리버 시리즈",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD6gUdMsz9tPoertLWUOTrOTZ7fAY9C8xyEEhVS6ZVfnOmfI1qHTLserq36V5lJ1I-N6Y51krurYJ1FsY8JogdSanSm2KFFb5PQr3eXUBc8iGWhliZILLAMJ5o5eFHfEdKrVSKCG7NAj5GN2aZs3gFqzjdmwL2xj7igqPO5058-BBbGMW9sWE04PrH4kRfm4CGlHdiEp74SdJW3qceuxbaqrwHaHN6ZtnA8YcCt4WtkT-Yd1UIr95VR",
+        slot1: "이미지를 불러올 수 없습니다. images/book2.jpg",
+        slot2: "이미지를 불러올 수 없습니다. images/book3.jpg",
+        slot3: "이미지를 불러올 수 없습니다. images/book4.jpg",
+        role: "표지 디자인 · 내지 편집 · 레이아웃",
+        tools: "hwp(한글) · Illustrator · Photoshop"
+      },
+      joseon: {
+        category: "북디자인 / 2024.05",
+        title: "조선왕조국경영역",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC-Qpnm3RZARYH5ZWEKfMX0dxW5HlyGTOSp8NRxD4PJ4GDwmlDYAdFhKSKWPLWriZIHSHqvyyhimpxJJH8OTYCvBElbsIV1PvuE2s2ZxqpCr8aBelGy2n6s2jfApTToUHqEw-XJxb5QYWwTWX--yupnMCMFwpzzRrLOyHaj2-hIK7nxPVAsjLEPWdWOuhDuokDvz77G9wTajZH9l-YySW80LCfBFtWfsZpfWP7sS2k",
+        slot1: "조선왕조국경영역 내지 구성 및 고지도 분석 레이아웃",
+        slot2: "표지 타이포그래피 & 제책 규격 데이터",
+        slot3: "images/joseon_detail_spread.jpg",
+        role: "표지 기획 및 아트워크 · 고지도 복원 편집 · 조판",
+        tools: "Illustrator · Photoshop · InDesign"
+      },
+      barexam: {
+        category: "시리즈 책 / 2026.02",
+        title: "2026 UNION 제15회 변호사시험 기출문제집",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAhMa7GXHbdkA9MU6jeYVXM_39RCplidRpHog5G9VyLiRCOnuHM07H0b4lIgTBCqAZnMK6gojX9Uh7YlS6hyXP9t-QV38m90WKKDqHvEKgZh4qxvLWiP8XqjN7gYAwqyRt1BljnnON1_Bn9b7qzYOQi0turyCwEddTfB70XlfCLJtYhSCc7Cq-3KHojAg-6aY7KDWQ7FqbKgqs0j5g5x98MyQDoSRLtUuacKOE6hZ0",
+        slot1: "해설편 인덱스 컬러 시스템 및 타이포 가이드",
+        slot2: "기출 연계 모의고사 문제집 분책 커버 디자인",
+        slot3: "images/union_exam_inner.jpg",
+        role: "시리즈 아이덴티티 통일 · 커버 아트워크 · 본문 조판",
+        tools: "hwp(한글) · Illustrator · Photoshop"
+      },
+      banapresso: {
+        category: "04 광고 영상 / 2026.10",
+        title: "banapresso cafe (바나프레소 광고)",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0nv0hO9IVqGi01p-Iziip853aFLmm6APnMOJ3zwdI144flHZdLkXXeRC4hTta7s8klrEQ1rMNImCzDbcZiPXFzFbbcqySNlYuLvr97eyj9sS2-fBQ2oa5MGthZ84TdySX45wQO9pIrdCgTXhC8A1nw1w9icF4aI2xt_HNMuX27715pEBXcwaJYbd6ZNMwy914hEPq7gbIqJsJXx4SppJlI9A2sUlwie7_yLJ5wBY",
+        slot1: "스토리보드 시퀀스 & 컷 구성 기획안",
+        slot2: "매장 현장 시네마틱 룩 및 사운드 믹싱",
+        slot3: "바나프레소 시그니처 핑크 컬러 틴트 그레이딩",
+        role: "영상 연출 · 편집 · 컬러 그레이딩 · 모션그래픽",
+        tools: "Premiere Pro · After Effects · Photoshop"
+      },
+      radiu: {
+        category: "인트로 / 2026",
+        title: "유튜브 채널 라디유 인트로",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBJkeOxPws23kLxDA5ogJ7Ao9QDH2VKkpCr9kGPmyCMBPLrV5SaTaVY5o_134EXPF-1udcfxMwJ_aPIsnJz3Sc_qwHD1GffU_Kukz5qJoonrkspVSG3qYPobROD-XjbRXZVfyDJxolQpGwicqn-Y6Pw6NPE8UY9gKBKiGUow72p9eoM5QqTijcLDpYUyuF39lCahMyShCxdyodZs3WHCxghaHCa7lRKV_kFDosyqmc",
+        slot1: "오디오 비주얼라이저 & HUD 애니메이션 키프레임",
+        slot2: "SF 테크 무드 3D 타이틀 트래킹",
+        slot3: "images/radiu_channel_banner.jpg",
+        role: "3D 모션그래픽 · 타이틀 시퀀스 제작 · SFX 디자인",
+        tools: "After Effects · Cinema 4D · Premiere Pro"
+      },
+      graphic: {
+        category: "그래픽 디자인 / 2026",
+        title: "그래픽 디자인 프로젝트",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJl_GNQBRQOVSyXev7u7RvuWidYS5hwyPN3WP4BYuCMDu13fDyzSmqVpSsFB_YMKS2BuWdM0u36G5OstylEtpm__nzSu6NDwFwnv58_DY2_WI9KSVlUWU8p-X0pFTbjviDFE_6Cr7MyYSRTtwi15AQkvmlKIb0rNIHQuxjOZuF4jNG0ICWJWEIwUNVgVfdv5sH4Hp4beyQUWmKjSkxjsCXJdpFOuYUco3my-DlWmk",
+        slot1: "브랜드 심볼 그리드 및 비주얼 시스템 매뉴얼",
+        slot2: "포스터 어플리케이션 & 패키지 모형",
+        slot3: "images/brand_graphic_assets.jpg",
+        role: "브랜드 비주얼 컨셉 기획 · 그래픽 시스템 개발",
+        tools: "Illustrator · Photoshop"
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectData[key] || projectData.excalibur;
+      const modal = document.getElementById('projectModal');
+      const card = document.getElementById('modalCard');
+
+      document.getElementById('modalMetaCategory').textContent = data.category;
+      document.getElementById('modalProjectTitle').textContent = data.title;
+      document.getElementById('modalMainImg').src = data.image;
+      document.getElementById('modalMainImg').alt = data.title;
+      document.getElementById('modalPlaceholder1').textContent = data.slot1;
+      document.getElementById('modalPlaceholder2').textContent = data.slot2;
+      document.getElementById('modalPlaceholder3').textContent = data.slot3;
+      document.getElementById('modalRoleDetail').textContent = data.role;
+      document.getElementById('modalToolsDetail').textContent = data.tools;
+
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+
+      setTimeout(() => {
+        card.classList.remove('modal-enter');
+        card.classList.add('modal-enter-active');
+      }, 10);
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      const card = document.getElementById('modalCard');
+      card.classList.remove('modal-enter-active');
+      card.classList.add('modal-exit');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        card.classList.remove('modal-exit');
+        card.classList.add('modal-enter');
+        document.body.classList.remove('overflow-hidden');
+      }, 180);
+    }
+
+    document.getElementById('projectModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'projectModal') {
+        closeProjectModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('projectModal');
+        if (modal && !modal.classList.contains('hidden')) {
+          closeProjectModal();
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('[data-purpose="project-filters"] button');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('text-black', 'font-extrabold', 'border-b-2', 'border-black');
+            b.classList.add('text-[#777777]');
+          });
+          btn.classList.add('text-black', 'font-extrabold', 'border-b-2', 'border-black');
+          btn.classList.remove('text-[#777777]');
+        });
+      });
+    });
+</script>
+<!-- END: Interactive Scripts -->
+</body></html>
